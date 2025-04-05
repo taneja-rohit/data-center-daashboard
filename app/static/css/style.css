@@ -1,0 +1,178 @@
+/* Data Center Dashboard Custom CSS */
+
+/* Main styling */
+.main {
+    padding: 1rem;
+}
+
+/* Metrics styling */
+.css-1xarl3l {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Title styling */
+h1 {
+    color: #1E3A8A;
+    font-weight: 700;
+}
+
+h2 {
+    color: #2563EB;
+    font-weight: 600;
+}
+
+h3 {
+    color: #3B82F6;
+    font-weight: 500;
+}
+
+/* Card styling */
+div.css-1r6slb0 {
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* Button styling */
+.stButton>button {
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Sidebar styling */
+.css-1d391kg {
+    padding-top: 2rem;
+}
+
+/* Login form styling */
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
+    background-color: #F8FAFC;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+/* Table styling */
+.stTable {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Alerts styling */
+.stAlert {
+    border-radius: 5px;
+}
+
+.element-container:has(.stAlert) {
+    margin-bottom: 1rem;
+}
+
+/* Chart container styling */
+[data-testid="stPlotlyChart"] {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .css-1r6slb0 {
+        padding: 0.5rem;
+    }
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Divider styling */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    margin: 1.5rem 0;
+}
+
+/* Recommendation card styling */
+.stInfo {
+    border-left: 5px solid #3B82F6;
+}
+
+/* Status indicators */
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-good {
+    background-color: #10B981;
+}
+
+.status-warning {
+    background-color: #F59E0B;
+}
+
+.status-critical {
+    background-color: #EF4444;
+}
+
+/* Custom data filter sections */
+.filter-container {
+    background-color: #F1F5F9;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* Tab container */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 2rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 3rem;
+}
+
+/* Progress bars */
+div[data-testid="stProgress"] {
+    height: 1rem;
+    border-radius: 10px;
+}
+
+/* Select box styling */
+div[data-testid="stSelectbox"] > div > div {
+    background-color: white;
+    border-radius: 5px;
+} 
