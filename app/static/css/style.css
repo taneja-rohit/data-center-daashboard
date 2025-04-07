@@ -1,10 +1,10 @@
 /* Data Center Dashboard Custom CSS */
 
-/* Force light mode and white background everywhere */
-.stApp, .main, [data-testid="stSidebar"], .stMarkdown, 
-[data-testid="stVerticalBlock"], [data-testid="stHorizontalBlock"] {
-    background-color: white !important;
-    color: #2C3E50 !important;
+/* Universal text color */
+.stApp, .main, .stMarkdown, 
+[data-testid="stVerticalBlock"], [data-testid="stHorizontalBlock"],
+.stMarkdown, p, span, div {
+    color: #2DD4BF !important;  /* Sober teal that works on both backgrounds */
 }
 
 /* Main styling */
@@ -16,13 +16,12 @@
 .css-1xarl3l, [data-testid="stMetricValue"], [data-testid="stMetricDelta"] {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #2C3E50 !important;
-    background-color: white !important;
+    color: #2DD4BF !important;
 }
 
 /* Title styling */
-h1, h2, h3, h4, h5, h6, p {
-    color: #2C3E50 !important;
+h1, h2, h3, h4, h5, h6 {
+    color: #2DD4BF !important;
 }
 
 h1 {
@@ -41,78 +40,63 @@ h3 {
 div.css-1r6slb0, [data-testid="stDecoration"] {
     border-radius: 10px;
     padding: 1rem;
-    background-color: white !important;
-    border: 1px solid #E2E8F0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border: 1px solid #2DD4BF;
+    background: transparent !important;
 }
 
 /* Button styling */
 .stButton>button {
     border-radius: 5px;
     font-weight: 500;
-    background-color: #2E86C1 !important;
-    color: white !important;
+    background-color: #2DD4BF !important;
+    color: #111827 !important;  /* Dark text for contrast on teal background */
+    border: none;
 }
 
 .stButton>button:hover {
-    background-color: #2874A6 !important;
+    background-color: #14B8A6 !important;
 }
 
 /* Chart container styling */
 [data-testid="stPlotlyChart"] {
-    background-color: white !important;
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background: transparent !important;
 }
 
-/* Plot background */
+/* Plot styling */
 .js-plotly-plot .plotly {
-    background-color: white !important;
+    background: transparent !important;
 }
 
 /* Widget styling */
 .stSelectbox, .stMultiSelect, .stDateInput, .stNumberInput {
-    background-color: white !important;
+    color: #2DD4BF !important;
 }
 
-[data-baseweb="select"] {
-    background-color: white !important;
-}
-
-/* Sidebar specific styling */
-[data-testid="stSidebar"] {
-    background-color: white !important;
-    border-right: 1px solid #E2E8F0;
-}
-
-[data-testid="stSidebarNav"] {
-    background-color: white !important;
-}
-
-/* Info boxes with consistent backgrounds */
+/* Info boxes with consistent styling */
 .stInfo {
-    background-color: #EBF5FB !important;
-    color: #2C3E50 !important;
-    border-left: 5px solid #2E86C1;
+    background-color: rgba(45, 212, 191, 0.1) !important;
+    color: #2DD4BF !important;
+    border-left: 5px solid #2DD4BF;
 }
 
 .stWarning {
-    background-color: #FEF5E7 !important;
-    color: #2C3E50 !important;
-    border-left: 5px solid #F39C12;
+    background-color: rgba(234, 179, 8, 0.1) !important;
+    color: #EAB308 !important;
+    border-left: 5px solid #EAB308;
 }
 
 .stError {
-    background-color: #FDEDEC !important;
-    color: #2C3E50 !important;
-    border-left: 5px solid #E74C3C;
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    color: #EF4444 !important;
+    border-left: 5px solid #EF4444;
 }
 
 .stSuccess {
-    background-color: #E8F6F3 !important;
-    color: #2C3E50 !important;
-    border-left: 5px solid #27AE60;
+    background-color: rgba(34, 197, 94, 0.1) !important;
+    color: #22C55E !important;
+    border-left: 5px solid #22C55E;
 }
 
 /* Status indicators */
@@ -125,79 +109,96 @@ div.css-1r6slb0, [data-testid="stDecoration"] {
 }
 
 .status-good {
-    background-color: #27AE60 !important;
+    background-color: #22C55E !important;
 }
 
 .status-warning {
-    background-color: #F39C12 !important;
+    background-color: #EAB308 !important;
 }
 
 .status-critical {
-    background-color: #E74C3C !important;
+    background-color: #EF4444 !important;
 }
 
 /* Table styling */
 .stTable {
-    background-color: white !important;
-    color: #2C3E50 !important;
+    color: #2DD4BF !important;
 }
 
-/* Ensure white background for all Plotly charts */
-.plot-container, .svg-container {
-    background-color: white !important;
-}
-
-/* Force light theme for code blocks */
+/* Code blocks */
 .stCodeBlock {
-    background-color: #F8FAFC !important;
-    color: #2C3E50 !important;
+    color: #2DD4BF !important;
 }
 
-/* Ensure metric values are visible */
+/* Metric values */
 [data-testid="stMetricValue"] > div {
-    background-color: white !important;
-    color: #2C3E50 !important;
+    color: #2DD4BF !important;
 }
 
-/* Ensure dropdown menus are visible */
+/* Dropdown menus */
 [data-baseweb="popover"] {
-    background-color: white !important;
-    color: #2C3E50 !important;
+    color: #2DD4BF !important;
 }
 
-/* Ensure tooltips are visible */
+/* Tooltips */
 [data-testid="stTooltipIcon"] {
-    color: #2C3E50 !important;
+    color: #2DD4BF !important;
 }
 
-/* Ensure white background for expandable sections */
+/* Expandable sections */
 [data-testid="stExpander"] {
-    background-color: white !important;
-    color: #2C3E50 !important;
+    color: #2DD4BF !important;
 }
 
-/* Ensure white background for tabs */
+/* Tabs */
 [data-testid="stTabs"] {
+    color: #2DD4BF !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: #2DD4BF !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebarNav"] {
+    color: #2DD4BF !important;
+}
+
+/* Divider styling */
+hr {
+    border: 0;
+    height: 1px;
+    background: #2DD4BF33;
+    margin: 1.5rem 0;
+}
+
+/* Progress bars */
+div[data-testid="stProgress"] {
+    background-color: rgba(45, 212, 191, 0.2) !important;
+}
+
+div[data-testid="stProgress"] > div {
+    background-color: #2DD4BF !important;
+}
+
+/* Select box styling */
+div[data-testid="stSelectbox"] > div > div {
+    color: #2DD4BF !important;
+}
+
+/* Metric containers */
+div[data-testid="stMetricValue"] {
+    color: #2DD4BF !important;
+}
+
+div[data-testid="stMetricDelta"] {
+    color: #14B8A6 !important;
+}
+
+/* Sidebar specific styling */
+[data-testid="stSidebar"] {
     background-color: white !important;
-}
-
-.stTabs [data-baseweb="tab-panel"] {
-    background-color: white !important;
-}
-
-/* Sidebar styling */
-.css-1d391kg {
-    padding-top: 2rem;
-    background-color: #F8FAFC;
-}
-
-/* Login form styling */
-div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
-    background-color: #FFFFFF;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
+    border-right: 1px solid #E2E8F0;
 }
 
 /* Alerts styling */
@@ -245,14 +246,6 @@ div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
     opacity: 1;
 }
 
-/* Divider styling */
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-    margin: 1.5rem 0;
-}
-
 /* Custom data filter sections */
 .filter-container {
     background-color: #FFFFFF;
@@ -273,45 +266,11 @@ hr {
     color: #2C3E50;
 }
 
-/* Progress bars */
-div[data-testid="stProgress"] {
-    height: 1rem;
+/* Login form styling */
+div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
+    background-color: #FFFFFF;
+    padding: 2rem;
     border-radius: 10px;
-}
-
-/* Select box styling */
-div[data-testid="stSelectbox"] > div > div {
-    background-color: white;
-    border-radius: 5px;
-    color: #2C3E50;
-}
-
-/* Metric containers */
-div[data-testid="stMetricValue"] {
-    color: #2C3E50;
-}
-
-div[data-testid="stMetricDelta"] {
-    color: #2C3E50;
-}
-
-/* Warning boxes */
-.stWarning {
-    background-color: #FEF5E7;  /* Light orange background */
-    color: #2C3E50;
-    border-left: 5px solid #F39C12;
-}
-
-/* Error boxes */
-.stError {
-    background-color: #FDEDEC;  /* Light red background */
-    color: #2C3E50;
-    border-left: 5px solid #E74C3C;
-}
-
-/* Success boxes */
-.stSuccess {
-    background-color: #E8F6F3;  /* Light green background */
-    color: #2C3E50;
-    border-left: 5px solid #27AE60;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 } 

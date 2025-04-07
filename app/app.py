@@ -19,27 +19,30 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Force light theme and white background
+# Universal styling that works on both light and dark backgrounds
 st.markdown("""
     <style>
-        /* Force white background for main content and sidebar */
-        .stApp {
-            background-color: white !important;
+        /* Universal text color that works on both light and dark backgrounds */
+        .universal-text {
+            color: #2DD4BF !important;  /* Sober teal color */
         }
         
-        /* Force white background for all plotly charts */
+        /* Ensure charts have transparent backgrounds to work with any theme */
         .js-plotly-plot .plotly {
-            background-color: white !important;
+            background: transparent !important;
         }
         
-        /* Force white background for sidebar */
-        [data-testid="stSidebar"] {
-            background-color: white !important;
+        /* Style adjustments for better visibility */
+        [data-testid="stMetricValue"] {
+            color: #2DD4BF !important;
         }
         
-        /* Force white background for widgets */
-        .stSelectbox, .stMultiSelect {
-            background-color: white !important;
+        [data-testid="stMetricDelta"] {
+            color: #14B8A6 !important;
+        }
+        
+        .stMarkdown {
+            color: #2DD4BF !important;
         }
     </style>
 """, unsafe_allow_html=True)
