@@ -3,27 +3,30 @@
 /* Main styling */
 .main {
     padding: 1rem;
+    color: #2C3E50;  /* Dark blue-grey for better contrast */
+    background-color: #F8FAFC;
 }
 
 /* Metrics styling */
 .css-1xarl3l {
     font-size: 1.2rem;
     font-weight: 600;
+    color: #2C3E50;
 }
 
 /* Title styling */
 h1 {
-    color: #1E3A8A;
+    color: #2C3E50;  /* Changed from #1E3A8A for better contrast */
     font-weight: 700;
 }
 
 h2 {
-    color: #2563EB;
+    color: #34495E;  /* Changed from #2563EB for better contrast */
     font-weight: 600;
 }
 
 h3 {
-    color: #3B82F6;
+    color: #2C3E50;  /* Changed from #3B82F6 for better contrast */
     font-weight: 500;
 }
 
@@ -31,7 +34,7 @@ h3 {
 div.css-1r6slb0 {
     border-radius: 10px;
     padding: 1rem;
-    background-color: #F8FAFC;
+    background-color: #FFFFFF;  /* Pure white background */
     border: 1px solid #E2E8F0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -40,16 +43,23 @@ div.css-1r6slb0 {
 .stButton>button {
     border-radius: 5px;
     font-weight: 500;
+    background-color: #2E86C1;  /* Consistent blue */
+    color: white;
+}
+
+.stButton>button:hover {
+    background-color: #2874A6;  /* Darker blue on hover */
 }
 
 /* Sidebar styling */
 .css-1d391kg {
     padding-top: 2rem;
+    background-color: #F8FAFC;
 }
 
 /* Login form styling */
 div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
-    background-color: #F8FAFC;
+    background-color: #FFFFFF;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -60,11 +70,13 @@ div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
 .stTable {
     border-radius: 8px;
     overflow: hidden;
+    color: #2C3E50;
 }
 
 /* Alerts styling */
 .stAlert {
     border-radius: 5px;
+    color: #2C3E50;
 }
 
 .element-container:has(.stAlert) {
@@ -122,12 +134,7 @@ hr {
     margin: 1.5rem 0;
 }
 
-/* Recommendation card styling */
-.stInfo {
-    border-left: 5px solid #3B82F6;
-}
-
-/* Status indicators */
+/* Status indicators with better contrast */
 .status-indicator {
     display: inline-block;
     width: 12px;
@@ -137,32 +144,35 @@ hr {
 }
 
 .status-good {
-    background-color: #10B981;
+    background-color: #27AE60;  /* Darker green */
 }
 
 .status-warning {
-    background-color: #F59E0B;
+    background-color: #F39C12;  /* Darker yellow/orange */
 }
 
 .status-critical {
-    background-color: #EF4444;
+    background-color: #E74C3C;  /* Darker red */
 }
 
 /* Custom data filter sections */
 .filter-container {
-    background-color: #F1F5F9;
+    background-color: #FFFFFF;
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
+    border: 1px solid #E2E8F0;
 }
 
 /* Tab container */
 .stTabs [data-baseweb="tab-list"] {
     gap: 2rem;
+    background-color: #FFFFFF;
 }
 
 .stTabs [data-baseweb="tab"] {
     height: 3rem;
+    color: #2C3E50;
 }
 
 /* Progress bars */
@@ -175,4 +185,42 @@ div[data-testid="stProgress"] {
 div[data-testid="stSelectbox"] > div > div {
     background-color: white;
     border-radius: 5px;
+    color: #2C3E50;
+}
+
+/* Metric containers */
+div[data-testid="stMetricValue"] {
+    color: #2C3E50;
+}
+
+div[data-testid="stMetricDelta"] {
+    color: #2C3E50;
+}
+
+/* Info boxes */
+.stInfo {
+    background-color: #EBF5FB;  /* Light blue background */
+    color: #2C3E50;
+    border-left: 5px solid #2E86C1;
+}
+
+/* Warning boxes */
+.stWarning {
+    background-color: #FEF5E7;  /* Light orange background */
+    color: #2C3E50;
+    border-left: 5px solid #F39C12;
+}
+
+/* Error boxes */
+.stError {
+    background-color: #FDEDEC;  /* Light red background */
+    color: #2C3E50;
+    border-left: 5px solid #E74C3C;
+}
+
+/* Success boxes */
+.stSuccess {
+    background-color: #E8F6F3;  /* Light green background */
+    color: #2C3E50;
+    border-left: 5px solid #27AE60;
 } 

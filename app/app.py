@@ -616,35 +616,34 @@ def render_resource_management():
                 
                 forecast_df = pd.DataFrame({
                     'date': forecast_dates,
-                    'forecasted_power': forecast_values
+                    'power_usage': forecast_values
                 })
                 
                 # Historical data
                 historical = df.groupby(df['timestamp'].dt.date)['power_usage'].mean().reset_index()
-                historical.columns = ['date', 'actual_power']
+                historical.columns = ['date', 'power_usage']
+                historical['type'] = 'Historical'
+                forecast_df['type'] = 'Forecast'
                 
-                # Combine actual and forecast
-                combined_df = pd.merge(historical, forecast_df, on='date', how='outer')
+                # Combine actual and forecast using concat
+                combined_df = pd.concat([historical, forecast_df], axis=0)
                 
-                fig = go.Figure()
-                fig.add_trace(go.Scatter(
-                    x=combined_df['date'],
-                    y=combined_df['actual_power'],
-                    mode='lines',
-                    name='Historical'
-                ))
-                fig.add_trace(go.Scatter(
-                    x=combined_df['date'],
-                    y=combined_df['forecasted_power'],
-                    mode='lines',
-                    line=dict(dash='dash'),
-                    name='Forecast'
-                ))
+                fig = px.line(
+                    combined_df,
+                    x='date',
+                    y='power_usage',
+                    color='type',
+                    labels={'date': 'Date', 'power_usage': 'Average Power Usage (kW)', 'type': 'Data Type'},
+                    color_discrete_map={'Historical': '#2E86C1', 'Forecast': '#FF7F50'}
+                )
                 
                 fig.update_layout(
                     xaxis_title="Date",
                     yaxis_title="Average Power Usage (kW)",
-                    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+                    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='#2C3E50')
                 )
                 
                 st.plotly_chart(fig, use_container_width=True)
@@ -661,35 +660,44 @@ def render_resource_management():
             current_utilization = df['cpu_utilization'].mean()
             projected_utilization = current_utilization * 1.15  # Assume 15% growth
             
-            # Create a gauge chart
+            # Create a gauge chart with better color contrast
             fig = go.Figure(go.Indicator(
                 mode="gauge+number+delta",
                 value=current_utilization,
-                delta={'reference': 75, 'increasing': {'color': "red"}, 'decreasing': {'color': "green"}},
+                delta={'reference': 75, 'increasing': {'color': "#E74C3C"}, 'decreasing': {'color': "#27AE60"}},
                 gauge={
-                    'axis': {'range': [0, 100], 'tickwidth': 1},
-                    'bar': {'color': "darkblue"},
+                    'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "#2C3E50"},
+                    'bar': {'color': "#2E86C1"},
                     'bgcolor': "white",
+                    'borderwidth': 2,
+                    'bordercolor': "#2C3E50",
                     'steps': [
-                        {'range': [0, 50], 'color': 'lightgreen'},
-                        {'range': [50, 70], 'color': 'yellow'},
-                        {'range': [70, 85], 'color': 'orange'},
-                        {'range': [85, 100], 'color': 'red'},
+                        {'range': [0, 50], 'color': '#A8E6CF'},  # Light green
+                        {'range': [50, 70], 'color': '#FFD3B6'},  # Light orange
+                        {'range': [70, 85], 'color': '#FFAAA5'},  # Darker orange
+                        {'range': [85, 100], 'color': '#FF8B94'}  # Light red
                     ],
                     'threshold': {
-                        'line': {'color': "red", 'width': 4},
+                        'line': {'color': "#E74C3C", 'width': 4},
                         'thickness': 0.75,
                         'value': projected_utilization
                     }
                 },
-                title={'text': "Current CPU Utilization"}
+                title={'text': "Current CPU Utilization", 'font': {'color': "#2C3E50"}}
             ))
+            
+            fig.update_layout(
+                paper_bgcolor='white',
+                font={'color': "#2C3E50"},
+                margin=dict(t=80, b=0)
+            )
             
             fig.add_annotation(
                 x=0.5,
                 y=0.25,
                 text=f"Projected: {projected_utilization:.1f}%",
-                showarrow=False
+                showarrow=False,
+                font=dict(color="#2C3E50")
             )
             
             st.plotly_chart(fig, use_container_width=True)
