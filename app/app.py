@@ -157,10 +157,22 @@ def main():
         default_index=0,
         orientation="horizontal",
         styles={
-            "container": {"padding": "0!important", "background-color": "#f0f2f6"},
-            "icon": {"color": "blue", "font-size": "18px"},
-            "nav-link": {"font-size": "16px", "text-align": "center", "margin": "0px", "--hover-color": "#eee"},
-            "nav-link-selected": {"background-color": "#0083B8"},
+            "container": {"padding": "0!important", "background-color": "#1E293B"},  # Darker background
+            "icon": {"color": "#FFFFFF", "font-size": "18px"},  # White icons
+            "nav-link": {
+                "font-size": "16px",
+                "text-align": "center",
+                "margin": "0px",
+                "color": "#FFFFFF",  # White text
+                "background-color": "#1E293B",  # Same as container
+                "--hover-color": "#334155",  # Slightly lighter on hover
+                "transition": "background-color 0.3s ease"
+            },
+            "nav-link-selected": {
+                "background-color": "#0EA5E9",  # Bright blue for selected tab
+                "color": "#FFFFFF",  # White text for selected tab
+                "font-weight": "600"  # Bold text for selected tab
+            }
         }
     )
     
