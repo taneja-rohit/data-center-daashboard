@@ -1,40 +1,47 @@
 /* Data Center Dashboard Custom CSS */
 
+/* Force light mode and white background everywhere */
+.stApp, .main, [data-testid="stSidebar"], .stMarkdown, 
+[data-testid="stVerticalBlock"], [data-testid="stHorizontalBlock"] {
+    background-color: white !important;
+    color: #2C3E50 !important;
+}
+
 /* Main styling */
 .main {
     padding: 1rem;
-    color: #2C3E50;  /* Dark blue-grey for better contrast */
-    background-color: #F8FAFC;
 }
 
 /* Metrics styling */
-.css-1xarl3l {
+.css-1xarl3l, [data-testid="stMetricValue"], [data-testid="stMetricDelta"] {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #2C3E50;
+    color: #2C3E50 !important;
+    background-color: white !important;
 }
 
 /* Title styling */
+h1, h2, h3, h4, h5, h6, p {
+    color: #2C3E50 !important;
+}
+
 h1 {
-    color: #2C3E50;  /* Changed from #1E3A8A for better contrast */
     font-weight: 700;
 }
 
 h2 {
-    color: #34495E;  /* Changed from #2563EB for better contrast */
     font-weight: 600;
 }
 
 h3 {
-    color: #2C3E50;  /* Changed from #3B82F6 for better contrast */
     font-weight: 500;
 }
 
 /* Card styling */
-div.css-1r6slb0 {
+div.css-1r6slb0, [data-testid="stDecoration"] {
     border-radius: 10px;
     padding: 1rem;
-    background-color: #FFFFFF;  /* Pure white background */
+    background-color: white !important;
     border: 1px solid #E2E8F0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -43,12 +50,139 @@ div.css-1r6slb0 {
 .stButton>button {
     border-radius: 5px;
     font-weight: 500;
-    background-color: #2E86C1;  /* Consistent blue */
-    color: white;
+    background-color: #2E86C1 !important;
+    color: white !important;
 }
 
 .stButton>button:hover {
-    background-color: #2874A6;  /* Darker blue on hover */
+    background-color: #2874A6 !important;
+}
+
+/* Chart container styling */
+[data-testid="stPlotlyChart"] {
+    background-color: white !important;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* Plot background */
+.js-plotly-plot .plotly {
+    background-color: white !important;
+}
+
+/* Widget styling */
+.stSelectbox, .stMultiSelect, .stDateInput, .stNumberInput {
+    background-color: white !important;
+}
+
+[data-baseweb="select"] {
+    background-color: white !important;
+}
+
+/* Sidebar specific styling */
+[data-testid="stSidebar"] {
+    background-color: white !important;
+    border-right: 1px solid #E2E8F0;
+}
+
+[data-testid="stSidebarNav"] {
+    background-color: white !important;
+}
+
+/* Info boxes with consistent backgrounds */
+.stInfo {
+    background-color: #EBF5FB !important;
+    color: #2C3E50 !important;
+    border-left: 5px solid #2E86C1;
+}
+
+.stWarning {
+    background-color: #FEF5E7 !important;
+    color: #2C3E50 !important;
+    border-left: 5px solid #F39C12;
+}
+
+.stError {
+    background-color: #FDEDEC !important;
+    color: #2C3E50 !important;
+    border-left: 5px solid #E74C3C;
+}
+
+.stSuccess {
+    background-color: #E8F6F3 !important;
+    color: #2C3E50 !important;
+    border-left: 5px solid #27AE60;
+}
+
+/* Status indicators */
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-good {
+    background-color: #27AE60 !important;
+}
+
+.status-warning {
+    background-color: #F39C12 !important;
+}
+
+.status-critical {
+    background-color: #E74C3C !important;
+}
+
+/* Table styling */
+.stTable {
+    background-color: white !important;
+    color: #2C3E50 !important;
+}
+
+/* Ensure white background for all Plotly charts */
+.plot-container, .svg-container {
+    background-color: white !important;
+}
+
+/* Force light theme for code blocks */
+.stCodeBlock {
+    background-color: #F8FAFC !important;
+    color: #2C3E50 !important;
+}
+
+/* Ensure metric values are visible */
+[data-testid="stMetricValue"] > div {
+    background-color: white !important;
+    color: #2C3E50 !important;
+}
+
+/* Ensure dropdown menus are visible */
+[data-baseweb="popover"] {
+    background-color: white !important;
+    color: #2C3E50 !important;
+}
+
+/* Ensure tooltips are visible */
+[data-testid="stTooltipIcon"] {
+    color: #2C3E50 !important;
+}
+
+/* Ensure white background for expandable sections */
+[data-testid="stExpander"] {
+    background-color: white !important;
+    color: #2C3E50 !important;
+}
+
+/* Ensure white background for tabs */
+[data-testid="stTabs"] {
+    background-color: white !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    background-color: white !important;
 }
 
 /* Sidebar styling */
@@ -66,13 +200,6 @@ div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
     margin-top: 2rem;
 }
 
-/* Table styling */
-.stTable {
-    border-radius: 8px;
-    overflow: hidden;
-    color: #2C3E50;
-}
-
 /* Alerts styling */
 .stAlert {
     border-radius: 5px;
@@ -81,14 +208,6 @@ div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
 
 .element-container:has(.stAlert) {
     margin-bottom: 1rem;
-}
-
-/* Chart container styling */
-[data-testid="stPlotlyChart"] {
-    background-color: white;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 /* Responsive adjustments */
@@ -134,27 +253,6 @@ hr {
     margin: 1.5rem 0;
 }
 
-/* Status indicators with better contrast */
-.status-indicator {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-.status-good {
-    background-color: #27AE60;  /* Darker green */
-}
-
-.status-warning {
-    background-color: #F39C12;  /* Darker yellow/orange */
-}
-
-.status-critical {
-    background-color: #E74C3C;  /* Darker red */
-}
-
 /* Custom data filter sections */
 .filter-container {
     background-color: #FFFFFF;
@@ -195,13 +293,6 @@ div[data-testid="stMetricValue"] {
 
 div[data-testid="stMetricDelta"] {
     color: #2C3E50;
-}
-
-/* Info boxes */
-.stInfo {
-    background-color: #EBF5FB;  /* Light blue background */
-    color: #2C3E50;
-    border-left: 5px solid #2E86C1;
 }
 
 /* Warning boxes */

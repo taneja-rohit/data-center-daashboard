@@ -19,6 +19,31 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Force light theme and white background
+st.markdown("""
+    <style>
+        /* Force white background for main content and sidebar */
+        .stApp {
+            background-color: white !important;
+        }
+        
+        /* Force white background for all plotly charts */
+        .js-plotly-plot .plotly {
+            background-color: white !important;
+        }
+        
+        /* Force white background for sidebar */
+        [data-testid="stSidebar"] {
+            background-color: white !important;
+        }
+        
+        /* Force white background for widgets */
+        .stSelectbox, .stMultiSelect {
+            background-color: white !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Custom CSS
 def local_css(file_name):
     with open(file_name) as f:
